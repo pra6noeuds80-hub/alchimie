@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alchimie : symboles, histoire et textes initiatiques</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Spectral:wght@400;600&family=Noto+Sans+Symbols+2&display=swap">
+<style>
+:root{--bg:#e8ebe2;--ink:#1c2927;--mute:#55655f;--line:#b9c2b6;--acc:#9c3a28;--gold:#8a6a1c;--card:#f1f3ec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a19;--ink:#e3e6dc;--mute:#97a69f;--line:#2e3d3a;--acc:#d9684f;--gold:#d0a94a;--card:#19231f}}
+:root[data-theme="dark"]{--bg:#121a19;--ink:#e3e6dc;--mute:#97a69f;--line:#2e3d3a;--acc:#d9684f;--gold:#d0a94a;--card:#19231f}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 Spectral,Georgia,serif}
+.sym{font-family:"Noto Sans Symbols 2","Segoe UI Symbol",serif}
+h1,h2,h3{font-family:"IM Fell English",Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+header{padding:3rem 1.25rem 2.5rem;max-width:56rem;margin:0 auto}
+h1{font-size:clamp(2.6rem,9vw,5rem)}
+header p{max-width:36rem;color:var(--mute)}
+.glyphs{font-size:clamp(2rem,8vw,3.4rem);letter-spacing:.35em;color:var(--gold);margin:1.5rem 0 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-block:1px solid var(--line);z-index:5;overflow-x:auto;white-space:nowrap}
+nav a{display:inline-block;padding:.7rem 1rem;color:var(--ink);text-decoration:none}
+nav a:hover,nav a:focus-visible{color:var(--acc);outline:none;text-decoration:underline}
+section{max-width:56rem;margin:0 auto;padding:3rem 1.25rem}
+h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:.4rem}
+.lead{color:var(--mute);margin:0 0 1.5rem;max-width:38rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.tabs button{font:inherit;font-size:.95rem;background:none;color:var(--ink);border:1px solid var(--line);padding:.35rem .9rem;border-radius:2px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.tabs button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.scroll{overflow-x:auto;border:1px solid var(--line);background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:34rem}
+th,td{text-align:left;padding:.65rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:"IM Fell English",serif;font-weight:400;font-size:1.05rem;color:var(--mute)}
+td.g{font-size:2rem;line-height:1;color:var(--gold);width:4rem}
+td.n{white-space:nowrap;font-weight:600}
+.tl{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:2px solid var(--line)}
+.tl li{position:relative;margin-bottom:1.6rem}
+.tl li::before{content:"";position:absolute;left:calc(-1.4rem - 6px);top:.65rem;width:10px;height:10px;border-radius:50%;background:var(--acc)}
+.tl b{font-family:"IM Fell English",serif;font-weight:400;font-size:1.25rem;display:block;color:var(--acc)}
+.step{border-left:4px solid var(--acc);padding:.2rem 0 .2rem 1rem;margin-bottom:1.4rem}
+.step h3{font-size:1.5rem}
+.step p{margin:.2rem 0}
+.text{background:var(--card);border:1px solid var(--line);padding:1.2rem 1.25rem;margin:1.2rem 0}
+.text h3{font-size:1.5rem;margin-bottom:.2rem}
+.src{color:var(--mute);font-size:.95rem;margin:0 0 1rem}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;padding:.8rem 0;border-top:1px solid var(--line)}
+.pair .la{font-family:"IM Fell English",serif;font-style:italic;font-size:1.1rem}
+.pair .fr{color:var(--ink)}
+@media(max-width:620px){.pair{grid-template-columns:1fr;gap:.3rem}}
+.tag{font-size:.85rem;color:var(--mute);display:block}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin:0 0 1rem;font-size:.95rem;color:var(--mute)}
+.legend span::before{content:"";display:inline-block;width:.8rem;height:.8rem;margin-right:.4rem;background:var(--c);vertical-align:-.05rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(5.2rem,1fr));gap:.5rem}
+.tile{font:inherit;text-align:center;background:var(--card);color:var(--ink);border:1px solid var(--line);border-top:5px solid var(--c);padding:.5rem .2rem .55rem;cursor:pointer}
+.tile .sym{display:block;font-size:2rem;line-height:1.3;color:var(--gold)}
+.tile small{display:block;font-size:.85rem;line-height:1.2}
+.tile[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.tile[aria-pressed="true"] .sym{color:var(--bg)}
+.tile:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.detail{margin-top:1rem;border:1px solid var(--line);border-left:5px solid var(--c,var(--acc));background:var(--card);padding:1rem 1.25rem;display:flex;gap:1.2rem;align-items:center}
+.detail .sym{font-size:3.6rem;line-height:1;color:var(--gold)}
+.detail h3{font-size:1.6rem}
+.detail p{margin:.2rem 0 0}
+.detail .tag{margin-bottom:.2rem}
+footer{max-width:56rem;margin:0 auto;padding:2rem 1.25rem 3rem;color:var(--mute);font-size:.95rem;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+<h1>Alchimie</h1>
+<p>Un art ancien qui cherchait à transformer la matière et celui qui la travaille. Ce site rassemble les symboles, l'histoire, les étapes du Grand Œuvre et des textes initiatiques traduits en français.</p>
+<div class="glyphs sym" aria-hidden="true">🜍 🜔 ☿ 🜂 🜄</div>
+</header>
+<nav aria-label="Sections"><a href="#tableau">Tableau</a><a href="#symboles">Symboles</a><a href="#histoire">Histoire</a><a href="#oeuvre">Grand Œuvre</a><a href="#textes">Textes traduits</a><a href="#recits">Récits</a></nav>
+
+<section id="tableau">
+<h2>Le tableau des symboles</h2>
+<p class="lead">Comme un tableau des éléments, chaque case porte un signe. Touche une case pour lire sa signification.</p>
+<div class="legend" id="legend"></div>
+<div class="grid" id="grid"></div>
+<div class="detail" id="detail" aria-live="polite"></div>
+</section>
+
+<section id="symboles">
+<h2>Table des symboles</h2>
+<p class="lead">Chaque signe désigne à la fois une substance, une force et un état de l'âme. Choisis une famille.</p>
+<div class="tabs" id="tabs" role="group" aria-label="Familles de symboles"></div>
+<div class="scroll"><table><thead><tr><th>Signe</th><th>Nom</th><th>Signification</th></tr></thead><tbody id="rows"></tbody></table></div>
+</section>
+
+<section id="histoire">
+<h2>Histoire</h2>
+<p class="lead">L'alchimie naît en plusieurs endroits et se transmet de langue en langue.</p>
+<ul class="tl">
+<li><b>Égypte hellénistique, IIIe–IVe siècle</b>À Alexandrie et Panopolis, Zosime de Panopolis consigne les premiers traités. On y trouve déjà l'ouroboros et l'idée que les métaux mûrissent comme des êtres vivants.</li>
+<li><b>Chine, IIe siècle</b>Wei Boyang écrit le <i>Cantong qi</i>, qui lie l'élixir de longue vie à la cosmologie du yin et du yang.</li>
+<li><b>Monde arabe, VIIIe–Xe siècle</b>Les textes attribués à Jabir ibn Hayyan et l'œuvre de Rhazès introduisent la théorie soufre-mercure et un travail de laboratoire méthodique. Le mot « alchimie » vient de l'arabe <i>al-kimiya</i>.</li>
+<li><b>Occident latin, XIIe siècle</b>Robert de Chester traduit un traité arabe en latin en 1144. L'Europe découvre l'art, que commentent ensuite Albert le Grand et Roger Bacon.</li>
+<li><b>Renaissance, XVIe siècle</b>Paracelse tourne l'alchimie vers la médecine. Le <i>Splendor Solis</i> (1582) fixe un grand cycle d'images.</li>
+<li><b>XVIIe siècle</b>Michael Maier publie l'<i>Atalanta fugiens</i> (1617), mêlant emblèmes, musique et vers. Le <i>Mutus Liber</i> (1677) raconte l'Œuvre sans un mot. Newton et Boyle pratiquent encore l'alchimie.</li>
+<li><b>1789</b>Lavoisier publie son <i>Traité élémentaire de chimie</i>. La chimie moderne se sépare de l'alchimie.</li>
+<li><b>XXe siècle</b>Carl Gustav Jung lit l'alchimie comme un langage symbolique du développement intérieur (<i>Psychologie et alchimie</i>, 1944).</li>
+</ul>
+</section>
+
+<section id="oeuvre">
+<h2>Les étapes du Grand Œuvre</h2>
+<p class="lead">Quatre phases, que la tradition désigne par des couleurs. Elles décrivent la matière dans la cornue et l'être qui se transforme.</p>
+<div class="step"><h3>Nigredo, l'œuvre au noir</h3><p>La matière est calcinée, putréfiée, dissoute. Intérieurement : la crise, le deuil des certitudes, la confrontation avec l'ombre.</p></div>
+<div class="step"><h3>Albedo, l'œuvre au blanc</h3><p>La matière est lavée et purifiée. Intérieurement : la clarté, l'apaisement, l'âme qui se dégage de la confusion.</p></div>
+<div class="step"><h3>Citrinitas, l'œuvre au jaune</h3><p>L'aube dorée, étape souvent omise par les derniers textes. Intérieurement : la lumière de la compréhension.</p></div>
+<div class="step"><h3>Rubedo, l'œuvre au rouge</h3><p>L'union des contraires donne la Pierre philosophale. Intérieurement : l'accomplissement, l'unité du corps, de l'âme et de l'esprit.</p></div>
+</section>
+
+<section id="textes">
+<h2>Textes initiatiques traduits</h2>
+<p class="lead">Les originaux latins ou grecs, avec leur traduction française, ligne à ligne.</p>
+
+<div class="text">
+<h3>La Table d'émeraude</h3>
+<p class="src">Texte attribué à Hermès Trismégiste, version latine traditionnelle, traduction française.</p>
+<div class="pair"><div class="la">Verum, sine mendacio, certum et verissimum.</div><div class="fr">Il est vrai, sans mensonge, certain et très véritable.</div></div>
+<div class="pair"><div class="la">Quod est inferius est sicut quod est superius, et quod est superius est sicut quod est inferius, ad perpetranda miracula rei unius.</div><div class="fr">Ce qui est en bas est comme ce qui est en haut, et ce qui est en haut est comme ce qui est en bas, pour accomplir les miracles d'une seule chose.</div></div>
+<div class="pair"><div class="la">Et sicut res omnes fuerunt ab uno, meditatione unius, sic omnes res natae ab hac una re, adaptatione.</div><div class="fr">Et comme toutes les choses viennent de l'Un, par la méditation de l'Un, ainsi toutes les choses sont nées de cette chose unique, par adaptation.</div></div>
+<div class="pair"><div class="la">Pater eius est Sol, mater eius Luna ; portavit illud ventus in ventre suo ; nutrix eius terra est.</div><div class="fr">Son père est le Soleil, sa mère la Lune ; le vent l'a porté dans son ventre ; la Terre est sa nourrice.</div></div>
+<div class="pair"><div class="la">Separabis terram ab igne, subtile a spisso, suaviter, cum magno ingenio.</div><div class="fr">Tu sépareras la terre du feu, le subtil de l'épais, doucement, avec grande habileté.</div></div>
+<div class="pair"><div class="la">Ascendit a terra in caelum, iterumque descendit in terram, et recipit vim superiorum et inferiorum.</div><div class="fr">Il monte de la terre au ciel, redescend sur la terre, et reçoit la force des choses supérieures et inférieures.</div></div>
+<div class="pair"><div class="la">Sic habebis gloriam totius mundi.</div><div class="fr">Ainsi tu auras la gloire du monde entier.</div></div>
+</div>
+
+<div class="text">
+<h3>Formules des maîtres</h3>
+<p class="src">Maximes courtes que les adeptes se transmettaient.</p>
+<div class="pair"><div class="la">Ἓν τὸ πᾶν<span class="tag">Grec, ouroboros de Cléopâtre l'alchimiste</span></div><div class="fr">Le Tout est un.</div></div>
+<div class="pair"><div class="la">Visita interiora terrae, rectificando invenies occultum lapidem.<span class="tag">Devise du « VITRIOL »</span></div><div class="fr">Visite l'intérieur de la terre ; en rectifiant, tu trouveras la pierre cachée.</div></div>
+<div class="pair"><div class="la">Solve et coagula.</div><div class="fr">Dissous et coagule. Défais ce qui est figé, puis donne une forme nouvelle.</div></div>
+<div class="pair"><div class="la">Ora, lege, lege, lege, relege, labora et invenies.<span class="tag">Mutus Liber, 1677</span></div><div class="fr">Prie, lis, lis, lis, relis, travaille, et tu trouveras.</div></div>
+</div>
+</section>
+
+<section id="recits">
+<h2>Récits initiatiques</h2>
+<div class="text">
+<h3>Les Noces chymiques de Christian Rosenkreutz (1616)</h3>
+<p>Invité aux noces d'un roi et d'une reine, Christian Rosenkreutz traverse sept journées d'épreuves dans un château. Il est pesé sur une balance, assiste à l'exécution des souverains, puis à leur résurrection par un travail de laboratoire. Au terme du récit, il est fait chevalier de la Pierre d'or. Les noces symbolisent l'union des contraires et la renaissance de l'initié.</p>
+</div>
+<div class="text">
+<h3>La légende de Nicolas Flamel</h3>
+<p>Un copiste parisien du XIVe siècle achète un livre mystérieux, dont les pages décrivent l'Œuvre en images. Il voyage jusqu'en Espagne pour en faire expliquer le sens, puis, selon la légende, réussit la transmutation. Son histoire est tardive et romancée, mais elle montre l'idée centrale : le savoir ne se lit pas, il se mérite par la patience et la quête.</p>
+</div>
+</section>
+
+<footer>Les traductions françaises sont fournies à titre d'étude. Les symboles s'affichent avec la police Noto Sans Symbols 2 ; sans elle, certains signes peuvent apparaître comme des cases vides.</footer>
+
+<script>
+var D={
+"Éléments":[["🜂","Feu","Chaud et sec. Force qui transforme, énergie, volonté."],["🜄","Eau","Froid et humide. Dissolution, mémoire, émotion."],["🜁","Air","Chaud et humide. Souffle, esprit, médiation."],["🜃","Terre","Froid et sec. Matière, stabilité, corps."],["🜀","Quintessence","Cinquième élément, l'essence subtile qui unit tous les autres."]],
+"Principes":[["🜍","Soufre","L'âme et le principe actif, masculin, combustible."],["☿","Mercure","L'esprit, le principe volatil et fluide, qui relie le haut et le bas."],["🜔","Sel","Le corps et le principe fixe, qui donne forme et stabilité."]],
+"Planètes et métaux":[["☉","Soleil, or","Perfection, lumière, but de l'Œuvre."],["☽","Lune, argent","Principe féminin, reflet, pureté."],["♂","Mars, fer","Force, combat, énergie brute."],["♀","Vénus, cuivre","Harmonie, amour, union."],["♃","Jupiter, étain","Expansion, justice, équilibre."],["♄","Saturne, plomb","Matière la plus lourde, point de départ, œuvre au noir."]],
+"Substances":[["🜅","Eau-forte","Acide qui ronge les métaux, dissolution violente."],["🜆","Eau régale","Seule capable de dissoudre l'or."],["🜊","Vinaigre","Dissolvant doux, symbole de l'acidité qui purifie."],["🜓","Cinabre","Sulfure de mercure rouge, lié à la pierre rouge."],["🜖","Vitriol","Sulfate métallique, clé d'un acrostiche célèbre (VITRIOL)."]]
+};
+var tabs=document.getElementById('tabs'),rows=document.getElementById('rows');
+function show(k){
+ Array.prototype.forEach.call(tabs.children,function(b){b.setAttribute('aria-pressed',b.textContent===k)});
+ rows.innerHTML='';
+ D[k].forEach(function(r){
+  var tr=document.createElement('tr');
+  tr.innerHTML='<td class="g sym">'+r[0]+'</td><td class="n">'+r[1]+'</td><td>'+r[2]+'</td>';
+  rows.appendChild(tr);
+ });
+}
+Object.keys(D).forEach(function(k,i){
+ var b=document.createElement('button');b.type='button';b.textContent=k;
+ b.onclick=function(){show(k)};tabs.appendChild(b);
+});
+show('Éléments');
+
+var C={"Élément":"#2f7f86","Principe":"#b0821f","Métal et planète":"#9c3a28","Substance":"#5f8a3a"};
+var T=[
+["🜂","Feu","Élément","Chaud et sec. Il transforme, purifie et donne l'élan de la volonté."],
+["🜄","Eau","Élément","Froid et humide. Elle dissout, lave et porte la mémoire et l'émotion."],
+["🜁","Air","Élément","Chaud et humide. Le souffle qui relie la terre et le ciel."],
+["🜃","Terre","Élément","Froid et sec. La matière, le corps, la base stable de l'Œuvre."],
+["🜀","Quintessence","Élément","Le cinquième élément, essence subtile qui contient et unit les quatre autres."],
+["🜍","Soufre","Principe","L'âme et le principe actif, masculin, combustible et ardent."],
+["☿","Mercure","Principe","L'esprit, fluide et volatil. Il relie le haut et le bas, et porte le nom du messager des dieux."],
+["🜔","Sel","Principe","Le corps et le principe fixe. Il donne forme, stabilité et cristallisation."],
+["☉","Or, Soleil","Métal et planète","Le métal parfait et incorruptible. Il figure la lumière et le but de l'Œuvre."],
+["☽","Argent, Lune","Métal et planète","Le principe féminin, la pureté et le reflet. Il précède l'or."],
+["♂","Fer, Mars","Métal et planète","La force brute, le combat et l'énergie qui coupe et façonne."],
+["♀","Cuivre, Vénus","Métal et planète","L'harmonie, l'amour et l'union des contraires."],
+["♃","Étain, Jupiter","Métal et planète","L'expansion, la justice et l'équilibre."],
+["♄","Plomb, Saturne","Métal et planète","Le métal le plus lourd et le plus sombre. Il marque le départ, l'œuvre au noir."],
+["♁","Antimoine","Substance","Minéral qui purifie l'or. Son signe, le globe surmonté d'une croix, évoque la matière sous la direction de l'esprit."],
+["🜅","Eau-forte","Substance","Acide qui ronge la plupart des métaux. Dissolution vive, épreuve qui détruit l'inutile."],
+["🜆","Eau régale","Substance","Mélange d'acides, seul capable de dissoudre l'or. Il figure l'épreuve qui atteint l'incorruptible."],
+["🜊","Vinaigre","Substance","Dissolvant doux. L'acidité qui ouvre et purifie sans brûler."],
+["🜓","Cinabre","Substance","Sulfure de mercure rouge. Il évoque la pierre rouge et l'union du soufre et du mercure."],
+["🜕","Nitre","Substance","Salpêtre. Il active le feu et symbolise l'étincelle qui accélère la transformation."],
+["🜖","Vitriol","Substance","Sulfate métallique. Son nom est la clé de la devise VITRIOL : descends en toi-même pour trouver la pierre cachée."]
+];
+C["Opération"]="#7a5aa8";C["Instrument"]="#a0653f";C["Zodiaque"]="#3f6fb0";C["Temps"]="#6a7f8f";
+`🜈|Eau-de-vie|Substance|Esprit de vin obtenu par distillation, image de l'essence subtile qui se dégage de la matière.
+🜎|Soufre des philosophes|Substance|Le soufre secret, principe d'or vivant, à ne pas confondre avec le soufre vulgaire.
+🜏|Soufre noir|Substance|Le soufre à l'état de nigredo, matière sombre du début de l'Œuvre.
+🜐|Sublimé de mercure|Substance|Mercure purifié par sublimation, plus subtil et plus actif.
+🜘|Sel gemme|Substance|Sel de la terre, sel fixe tiré de la mine.
+🜜|Minerai de fer|Substance|Le fer à l'état brut, avant purification.
+🜞|Safran de fer|Substance|Oxyde de fer rouge, rouille finement divisée.
+🜠|Minerai de cuivre|Substance|Le cuivre brut, associé à Vénus, avant son raffinage.
+🜨|Vert-de-gris|Substance|Acétate de cuivre vert, signe de croissance et de vie naissante (viriditas).
+🜩|Minerai d'étain|Substance|L'étain brut de Jupiter, avant sa purification.
+🜪|Minerai de plomb|Substance|Le plomb brut de Saturne, matière première de l'œuvre au noir.
+🜫|Minerai d'antimoine|Substance|La stibine, minerai qui sert à purifier l'or.
+🜲|Régule|Substance|Métal pur déposé au fond du creuset après fusion, le cœur purifié de la matière.
+🜶|Alcali|Substance|Substance qui neutralise les acides, opposée de l'acide.
+🜸|Marcassite|Substance|Pyrite à l'éclat doré qui trompe : image des apparences.
+🜹|Sel ammoniac|Substance|Sel volatil qui se sublime sans fondre, lien entre le fixe et le volatil.
+🜺|Arsenic|Substance|Poison qui blanchit les métaux : l'agent qui tue et qui blanchit.
+🜻|Réalgar|Substance|Sulfure d'arsenic rouge-orangé.
+🜽|Orpiment|Substance|Sulfure d'arsenic jaune, couleur de l'or (aurum pigmentum).
+🜿|Tartre|Substance|Dépôt du vin, dont on tire le sel de tartre par calcination.
+🝁|Chaux vive|Substance|Pierre calcinée qui brûle au contact de l'eau : le feu caché dans la pierre.
+🝂|Borax|Substance|Fondant qui aide la fusion des métaux.
+🝅|Alun|Substance|Sel astringent qui clarifie et fixe les teintures.
+🝆|Huile|Substance|Extrait gras et onctueux, essence raffinée d'une matière.
+🝇|Esprit|Substance|Principe volatil obtenu par distillation.
+🝈|Teinture|Substance|Essence colorée extraite d'une matière, capable de teindre les métaux.
+🝉|Gomme|Substance|Substance collante qui lie les poudres.
+🝊|Cire|Substance|Matière molle qui garde l'empreinte, image de la matière réceptive.
+🝋|Poudre|Substance|Matière finement broyée, prête à réagir.
+🝌|Chaux (calx)|Substance|Résidu poudreux d'un métal calciné.
+🝎|Tête de mort|Substance|Caput mortuum : résidu inerte après distillation, la matière morte à raviver.
+🝓|Aimant|Substance|Pierre qui attire le fer : l'attraction des semblables.
+🝔|Savon|Substance|Corps qui purifie en liant l'eau et le gras.
+🝕|Urine|Substance|Matière organique très employée dans les premiers textes.
+🝖|Fumier de cheval|Substance|Chaleur douce de la fermentation, utilisée pour chauffer longtemps.
+🝗|Cendres|Substance|Ce qui reste du feu : le sel fixe de la plante.
+🝛|Amalgame|Substance|Alliage d'un métal avec le mercure.
+🝙|Brique|Substance|Terre cuite qui, réduite en poudre, sert de support de chauffe.
+🝞|Sublimation|Opération|Passage direct du solide à la vapeur : élévation de l'âme hors de la matière.
+🝟|Précipitation|Opération|Dépôt d'une substance qui se sépare d'un liquide.
+🝠|Distillation|Opération|Chauffer, vaporiser puis condenser pour séparer l'esprit du corps.
+🝡|Dissolution|Opération|Solve : le corps se dissout dans un liquide et perd sa forme figée.
+🝣|Purification|Opération|Retirer les impuretés pour atteindre l'essence.
+🝤|Putréfaction|Opération|Décomposition qui précède la renaissance, cœur de l'œuvre au noir.
+🝜|Strate sur strate|Opération|Couches alternées de matières dans le creuset, pour la cémentation.
+🝥|Creuset|Instrument|Récipient qui supporte le plus grand feu : lieu de la transformation.
+🝪|Alambic|Instrument|Appareil de distillation, il élève les vapeurs puis les recueille.
+🝫|Bain-marie|Instrument|Chaleur douce par l'eau chaude, attribuée à Marie la Juive.
+🝬|Bain de vapeur|Instrument|Chauffage doux par la vapeur.
+🝭|Cornue|Instrument|Récipient à col courbe pour distiller.
+🝐|Caducée|Instrument|Bâton ailé d'Hermès entouré de deux serpents : l'union des contraires.
+♈|Bélier|Zodiaque|Feu. Dans une correspondance traditionnelle des douze clés : la calcination.
+♉|Taureau|Zodiaque|Terre. Correspond à la congélation, qui fige la matière.
+♊|Gémeaux|Zodiaque|Air. Correspond à la fixation, qui rend stable le volatil.
+♋|Cancer|Zodiaque|Eau. Correspond à la solution, qui dissout le corps.
+♌|Lion|Zodiaque|Feu. Correspond à la digestion, cuisson lente et régulière. Le lion vert est aussi une figure de l'Œuvre.
+♍|Vierge|Zodiaque|Terre. Correspond à la distillation.
+♎|Balance|Zodiaque|Air. Correspond à la sublimation.
+♏|Scorpion|Zodiaque|Eau. Correspond à la séparation du pur et de l'impur.
+♐|Sagittaire|Zodiaque|Feu. Correspond à l'incinération.
+♑|Capricorne|Zodiaque|Terre. Correspond à la fermentation, qui anime la matière.
+♒|Verseau|Zodiaque|Air. Correspond à la multiplication de la pierre.
+♓|Poissons|Zodiaque|Eau. Correspond à la projection de la pierre sur le métal.
+🝮|Heure|Temps|Unité de durée des opérations.
+🝯|Nuit|Temps|La phase obscure, associée au travail de dissolution.
+🝰|Jour et nuit|Temps|Un cycle complet de vingt-quatre heures.
+🝱|Mois|Temps|Durée longue d'un cycle de l'Œuvre.`.split("\n").forEach(function(l){var p=l.split("|");if(p.length>3)T.push([p[0],p[1],p[2],p[3]])});
+var O=Object.keys(C);T.sort(function(a,b){return O.indexOf(a[2])-O.indexOf(b[2])});
+T.forEach(function(t){t[0]+="\uFE0E"});
+C["Couleur"]="#b8860b";C["Figure"]="#8a4a6a";
+`⬛|Noir (nigredo)|Couleur|Putréfaction et dissolution : la mort apparente de la matière, point de départ de l'Œuvre.
+🦚|Queue de paon|Couleur|Éclat irisé de toutes les couleurs, qui annonce le passage du noir au blanc (cauda pavonis).
+⬜|Blanc (albedo)|Couleur|Matière purifiée : la Pierre au blanc, qui change les métaux en argent.
+🟩|Vert (viriditas)|Couleur|Force de vie et de croissance, signe de renaissance dans la matière.
+🟨|Jaune (citrinitas)|Couleur|L'aube dorée, lumière de la compréhension, entre le blanc et le rouge.
+🟥|Rouge (rubedo)|Couleur|Accomplissement de l'Œuvre : la Pierre au rouge, qui change les métaux en or.
+🐍|Ouroboros|Figure|Serpent qui se mord la queue : cycle éternel, le Tout est un.
+🐉|Dragon|Figure|Matière brute et force indomptée, qu'il faut dompter ou transformer.
+🦁|Lion vert|Figure|Le vitriol vert, dissolvant puissant qui dévore l'or dans la première phase.
+🐦|Corbeau|Figure|Oiseau noir de la nigredo, annonce de la putréfaction.
+🦢|Cygne|Figure|Blancheur de l'albedo, matière purifiée.
+🕊|Colombe|Figure|Esprit purifié qui s'élève après la putréfaction.
+🦅|Aigle|Figure|Le volatil, la sublimation : l'esprit qui s'élève.
+⚗|Pélican|Figure|Vase de distillation à deux anses, et oiseau qui nourrit ses petits de son sang : image de l'élixir qui nourrit.
+♔|Roi rouge|Figure|Principe masculin, soufre, soleil.
+♕|Reine blanche|Figure|Principe féminin, mercure, lune.
+⚥|Androgyne (Rebis)|Figure|Union du masculin et du féminin en un seul être : la double chose.
+🌳|Arbre philosophique|Figure|Arbre aux métaux : croissance de la Pierre dans le vase.
+🔥|Phénix|Figure|Oiseau renaissant de ses cendres, signe de la rubedo.
+💎|Pierre philosophale|Figure|But du Grand Œuvre : elle transmute les métaux et guérit.`.split("\n").forEach(function(l){var p=l.split("|");if(p.length>3)T.push([p[0],p[1],p[2],p[3]])});
+C["Mesure"]="#7f6a3a";
+`1F71F|Régule de fer|Substance|Fer pur déposé au fond du creuset après fusion.
+1F721|Minerai de fer et de cuivre|Substance|Minerai mixte qui contient les deux métaux de Mars et de Vénus.
+1F722|Sublimé de cuivre|Substance|Cuivre purifié par sublimation.
+1F723|Crocus de cuivre|Substance|Poudre rouge-orangé d'oxyde de cuivre, obtenue par calcination.
+1F72C|Sublimé d'antimoine|Substance|Antimoine purifié par sublimation.
+1F72D|Sel d'antimoine|Substance|Sel tiré de l'antimoine.
+1F72F|Vinaigre d'antimoine|Substance|Dissolvant acide tiré de l'antimoine.
+1F730|Régule d'antimoine|Substance|Antimoine métallique pur, déposé après fusion.
+1F73E|Minerai de bismuth|Substance|Bismuth brut, métal blanc rosé proche de l'étain.
+1F74D|Tutie|Substance|Oxyde de zinc impur recueilli dans les cheminées des fourneaux, employé pour le laiton et en médecine.
+1F758|Cendres de potasse|Substance|Cendres de bois lessivées, source d'alcali végétal.
+1F75A|Brique en poudre|Substance|Terre cuite broyée, utilisée comme support de chauffe et comme abrasif.
+2108|Scrupule|Mesure|Mesure d'apothicaire : environ 1,3 g, soit le tiers d'un gros.
+292|Gros (drachme)|Mesure|Mesure d'apothicaire : trois scrupules, soit environ 3,9 g.
+1F772|Demi-gros|Mesure|La moitié d'un gros, environ 1,9 g.
+2125|Once|Mesure|Huit gros, soit environ 31 g.
+1F773|Demi-once|Mesure|La moitié d'une once, environ 15,5 g.
+2114|Livre|Mesure|Douze onces, soit environ 373 g.`.split("\n").forEach(function(l){var p=l.split("|");if(p.length>3)T.push([String.fromCodePoint(parseInt(p[0],16))+"\uFE0E",p[1],p[2],p[3]])});
+O=Object.keys(C);T.sort(function(a,b){return O.indexOf(a[2])-O.indexOf(b[2])});
+var lg=document.getElementById('legend'),gd=document.getElementById('grid'),dt=document.getElementById('detail');
+Object.keys(C).forEach(function(k){var s=document.createElement('span');s.style.setProperty('--c',C[k]);s.textContent=k;lg.appendChild(s)});
+function pick(i){
+ var t=T[i];
+ Array.prototype.forEach.call(gd.children,function(b,j){b.setAttribute('aria-pressed',j===i)});
+ dt.style.setProperty('--c',C[t[2]]);
+ dt.innerHTML='<div class="sym" aria-hidden="true">'+t[0]+'</div><div><span class="tag">'+t[2]+'</span><h3>'+t[1]+'</h3><p>'+t[3]+'</p></div>';
+}
+T.forEach(function(t,i){
+ var b=document.createElement('button');b.type='button';b.className='tile';b.style.setProperty('--c',C[t[2]]);
+ b.innerHTML='<span class="sym" aria-hidden="true">'+t[0]+'</span><small>'+t[1]+'</small>';
+ b.setAttribute('aria-label',t[1]);b.onclick=function(){pick(i)};gd.appendChild(b);
+});
+pick(0);
+</script>
+</body>
+</html>
